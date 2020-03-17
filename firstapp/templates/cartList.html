@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block CenterData %}
+<table border="1" cellspacing='5' width='500'>
+    <thead style="font-size:22px;text-align: center;">
+        <tr>
+            <td>product</td>
+            <td>quantity</td>
+            <td>price</td>
+            <td> Subtotal </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cr in crlist %}
+        <tr>
+            <td> {{ cr.pid.Pname }} </td>
+            <td> <input type="number" value='{{ cr.qty }}' id="qty" onclick=total()> </td>
+            <td> {{ cr.pid.price }} </td>
+            <td>
+                <p class="subtotal"></p>
+            </td>
+
+        </tr>
+        {% endfor %}
+        <tr>
+            <td> <button> Place order </button></td>
+            <td style="text-align: center;">Total = </td>
+            <td colspan="2" style="text-align: center;"> {{ 200 }}</td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    total = function() {
+        var qty = document.getElementById('qty')
+        console.log(qty)
+
+        document.getElementsByClassName("subtotal").innerHTML = 700;
+
+    }
+</script>
+{% endblock %}

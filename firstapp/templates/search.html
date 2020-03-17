@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block CenterData %}
+
+<form action="searchProduct" method="POST">
+    {% csrf_token %}
+    <textarea name="product" id="" cols="70" rows="1"> </textarea>
+    <input type="submit" value="search">
+
+</form>
+
+{% include 'mainPage.html' %} {% endblock %}

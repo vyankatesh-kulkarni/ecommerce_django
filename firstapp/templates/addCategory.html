@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block CenterData %}
+
+<form action='insertCategory' method='POST'>
+    {% csrf_token %}
+    <table border='1' cellspacing='5'>
+        {{form.as_table}}
+        <tr>
+            <td>
+                <input type="submit" value="add now"></td>
+        </tr>
+
+    </table>
+</form>
+
+{% endblock %}

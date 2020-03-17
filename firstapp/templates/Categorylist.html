@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block CenterData %}
+
+<table border="1" cellpadding="4" cellspacing='5'>
+    <tr>
+        <td> category Name</td>
+        <td> action </td>
+    </tr>
+    {% for c in category %}
+    <tr>
+        <td> {{ c.cname }}</td>
+        <td><a href="deleteCategory?cname={{c.cname}}"> delete </a></td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}

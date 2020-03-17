@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block CenterData %}
+
+<table border="1" cellpadding="4" cellspacing='5'>
+    <tr>
+        <td> product</td>
+        <td> price </td>
+        <td> description </td>
+        <td> category </td>
+        <td colspan="2"> action </td>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td> {{ product.Pname }}</td>
+        <td> {{ product.price }}</td>
+        <td> {{ product.description }}</td>
+        <td> {{ product.cname_id }}</td>
+        <td><a href="deleteProduct?id={{product.id}}"> delete </a></td>
+        <td><a href="editeProduct?id={{product.id}}"> update </a></td>
+
+
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}
